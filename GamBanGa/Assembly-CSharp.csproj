@@ -61,10 +61,14 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.1.2f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\EnemyMovingToTarget.cs" />
+    <Compile Include="Assets\Script\EnemyZigzag.cs" />
     <Compile Include="Assets\Script\EnemyControl.cs" />
     <Compile Include="Assets\Script\ObjectPooling.cs" />
     <Compile Include="Assets\Script\Bullet.cs" />
+    <Compile Include="Assets\Script\WavwManagement.cs" />
     <Compile Include="Assets\Script\PlayerController.cs" />
+    <Compile Include="Assets\Script\EnemyCircleMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

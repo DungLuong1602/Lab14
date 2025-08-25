@@ -3,6 +3,12 @@ using UnityEngine;
 public class EnemyControl : MonoBehaviour
 {
     public int hp = 1;
+    private Animator ani;
+
+    private void Start()
+    {
+        ani = GetComponent<Animator>();
+    }
     public void TakeDamage(int damage)
     {
         hp -= damage;
@@ -14,6 +20,7 @@ public class EnemyControl : MonoBehaviour
     private void Die()
     {
         // Add death effects or animations here if needed
+        ani.SetBool("IsDead",true);
         Destroy(gameObject);
     }
 }

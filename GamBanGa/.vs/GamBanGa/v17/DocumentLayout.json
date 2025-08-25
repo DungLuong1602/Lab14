@@ -3,11 +3,27 @@
   "WorkspaceRootPath": "D:\\Git\\Lab14\\GamBanGa\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3A49F090-CB02-02A7-3DB4-E432F476F4FB}|Assembly-CSharp.csproj|D:\\Git\\Lab14\\GamBanGa\\assets\\script\\enemycontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3A49F090-CB02-02A7-3DB4-E432F476F4FB}|Assembly-CSharp.csproj|D:\\Git\\Lab14\\GamBanGa\\assets\\script\\wavwmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A49F090-CB02-02A7-3DB4-E432F476F4FB}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\wavwmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A49F090-CB02-02A7-3DB4-E432F476F4FB}|Assembly-CSharp.csproj|D:\\Git\\Lab14\\GamBanGa\\assets\\script\\enemycirclemovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A49F090-CB02-02A7-3DB4-E432F476F4FB}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\enemycirclemovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A49F090-CB02-02A7-3DB4-E432F476F4FB}|Assembly-CSharp.csproj|D:\\Git\\Lab14\\GamBanGa\\assets\\script\\enemymovingtotarget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A49F090-CB02-02A7-3DB4-E432F476F4FB}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\enemymovingtotarget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A49F090-CB02-02A7-3DB4-E432F476F4FB}|Assembly-CSharp.csproj|d:\\git\\lab14\\gambanga\\assets\\script\\enemycontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3A49F090-CB02-02A7-3DB4-E432F476F4FB}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\enemycontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A49F090-CB02-02A7-3DB4-E432F476F4FB}|Assembly-CSharp.csproj|d:\\git\\lab14\\gambanga\\assets\\script\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3A49F090-CB02-02A7-3DB4-E432F476F4FB}|Assembly-CSharp.csproj|D:\\Git\\Lab14\\GamBanGa\\assets\\script\\enemyzigzag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A49F090-CB02-02A7-3DB4-E432F476F4FB}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\enemyzigzag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A49F090-CB02-02A7-3DB4-E432F476F4FB}|Assembly-CSharp.csproj|D:\\Git\\Lab14\\GamBanGa\\assets\\script\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3A49F090-CB02-02A7-3DB4-E432F476F4FB}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -43,19 +59,70 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "WavwManagement.cs",
+              "DocumentMoniker": "D:\\Git\\Lab14\\GamBanGa\\Assets\\Script\\WavwManagement.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\WavwManagement.cs",
+              "ToolTip": "D:\\Git\\Lab14\\GamBanGa\\Assets\\Script\\WavwManagement.cs",
+              "RelativeToolTip": "Assets\\Script\\WavwManagement.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowBcAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T13:49:54.967Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EnemyZigzag.cs",
+              "DocumentMoniker": "D:\\Git\\Lab14\\GamBanGa\\Assets\\Script\\EnemyZigzag.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\EnemyZigzag.cs",
+              "ToolTip": "D:\\Git\\Lab14\\GamBanGa\\Assets\\Script\\EnemyZigzag.cs",
+              "RelativeToolTip": "Assets\\Script\\EnemyZigzag.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T13:48:34.524Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EnemyCircleMovement.cs",
+              "DocumentMoniker": "D:\\Git\\Lab14\\GamBanGa\\Assets\\Script\\EnemyCircleMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\EnemyCircleMovement.cs",
+              "ToolTip": "D:\\Git\\Lab14\\GamBanGa\\Assets\\Script\\EnemyCircleMovement.cs",
+              "RelativeToolTip": "Assets\\Script\\EnemyCircleMovement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T13:44:50.701Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EnemyMovingToTarget.cs",
+              "DocumentMoniker": "D:\\Git\\Lab14\\GamBanGa\\Assets\\Script\\EnemyMovingToTarget.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\EnemyMovingToTarget.cs",
+              "ToolTip": "D:\\Git\\Lab14\\GamBanGa\\Assets\\Script\\EnemyMovingToTarget.cs",
+              "RelativeToolTip": "Assets\\Script\\EnemyMovingToTarget.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T13:42:44.826Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "EnemyControl.cs",
               "DocumentMoniker": "D:\\Git\\Lab14\\GamBanGa\\Assets\\Script\\EnemyControl.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\EnemyControl.cs",
               "ToolTip": "D:\\Git\\Lab14\\GamBanGa\\Assets\\Script\\EnemyControl.cs",
               "RelativeToolTip": "Assets\\Script\\EnemyControl.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAxwA0AAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-24T23:37:18.88Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "ObjectPooling.cs",
               "DocumentMoniker": "D:\\Git\\Lab14\\GamBanGa\\Assets\\Script\\ObjectPooling.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\ObjectPooling.cs",
@@ -63,12 +130,11 @@
               "RelativeToolTip": "Assets\\Script\\ObjectPooling.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAAqwB0AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-24T16:40:35.876Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-24T16:40:35.876Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Bullet.cs",
               "DocumentMoniker": "D:\\Git\\Lab14\\GamBanGa\\Assets\\Script\\Bullet.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Bullet.cs",
@@ -76,12 +142,11 @@
               "RelativeToolTip": "Assets\\Script\\Bullet.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAgwCEAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-24T16:30:11.957Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-24T16:30:11.957Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "D:\\Git\\Lab14\\GamBanGa\\Assets\\Script\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\PlayerController.cs",
@@ -89,8 +154,7 @@
               "RelativeToolTip": "Assets\\Script\\PlayerController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-24T16:09:16.764Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-24T16:09:16.764Z"
             }
           ]
         }
