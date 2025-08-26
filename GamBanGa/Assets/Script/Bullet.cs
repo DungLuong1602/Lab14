@@ -35,4 +35,12 @@ public class Bullet : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("boundary") && IsActive)
+        {
+            IsActive = false;
+            gameObject.SetActive(false);
+        }
+    }
 }

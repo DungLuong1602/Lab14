@@ -9,6 +9,8 @@ public class WavwManagement : MonoBehaviour
     public int cols = 5; // Số cột
     public int count = 7;
     public float radius = 4;
+    public float RowSpacing = 1.5f; // Khoảng cách giữa các hàng
+    public float ColSpacing = 1.5f; // Khoảng cách giữa các cột
     private void Start()
     {
         StartCoroutine(SpawnWaves());
@@ -31,8 +33,8 @@ public class WavwManagement : MonoBehaviour
         {
             for (int j = 0; j < cols; j++)
             {
-                Vector3 targetPos = new Vector3(j - 2, i + 3, 0);
-                Vector3 spawnPos = targetPos + new Vector3(0,6,0);
+                Vector3 targetPos = new Vector3(j*ColSpacing -6, i*RowSpacing, 0);
+                Vector3 spawnPos = targetPos + new Vector3(0,6f,0) ;
 
                 GameObject enemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
                 enemy.GetComponent<EnemyControl>().hp = 1;
@@ -78,15 +80,15 @@ public class WavwManagement : MonoBehaviour
     {
         yield return new WaitUntil(() => mover.ReachedTarget());
         circle.enabled = true;
-        Destroy(mover); // không cần script moveToTarget nữa
+        Destroy(mover);
     }
 
 
     void SpawnWave3()
     {
-        for (int i = 0;  i < 30; i++)
+        for (int i = 0;  i < 50; i++)
         {
-            Vector3 spawnPos = new Vector3((i % 10) - 5, 6 + (i / 10), 0);
+            Vector3 spawnPos = new Vector3((i *RowSpacing % 10) - 5, 6 + (i*ColSpacing), 0);
             GameObject enemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
             enemy.GetComponent<EnemyControl>().hp = 2;
             //enemy.tag = "enemy";

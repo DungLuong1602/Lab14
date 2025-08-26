@@ -3,7 +3,7 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class EnemyZigzag : MonoBehaviour
 {
-    public float speed = 2f;
+    public float speed = 5f;
     public float frequency = 2f; // tần số zigzag
     public float magnitude = 1f; // biên độ zigzag
     private Vector3 startPos;

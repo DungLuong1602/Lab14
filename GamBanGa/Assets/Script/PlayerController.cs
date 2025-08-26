@@ -4,6 +4,7 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 5.0f;
     public Transform firepoint;
+    public int Hp = 3;
 
     private Rigidbody2D rb;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -39,6 +40,19 @@ public class PlayerController : MonoBehaviour
 
     }
     
-        
-    
+    public void TakeDam(int damage)
+    {
+        Hp -= damage;
+        if (Hp <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        // Add death effects or animations here if needed
+        Destroy(gameObject);
+    }
+
 }
