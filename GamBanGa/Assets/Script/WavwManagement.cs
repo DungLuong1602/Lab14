@@ -7,6 +7,8 @@ public class WavwManagement : MonoBehaviour
     public GameObject enemyPrefab; // Prefab của kẻ thù
     public int rows = 3; // Số hàng
     public int cols = 5; // Số cột
+    public int count = 7;
+    public float radius = 4;
     private void Start()
     {
         StartCoroutine(SpawnWaves());
@@ -45,8 +47,6 @@ public class WavwManagement : MonoBehaviour
 
     void SpawnWave2()
     {
-        int count = 7;
-        float radius = 4;
         Vector3 center = new Vector3(0, 2, 0);
 
         for (int i = 0; i <count; i++)

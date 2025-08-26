@@ -21,6 +21,6 @@ public class EnemyControl : MonoBehaviour
     {
         // Add death effects or animations here if needed
         ani.SetBool("IsDead",true);
-        Destroy(gameObject);
+        Destroy(gameObject,0.5f);
     }
 }
