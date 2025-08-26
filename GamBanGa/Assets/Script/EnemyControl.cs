@@ -25,6 +25,7 @@ public class EnemyControl : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
+        AudioManager.Instance.PlaySFX("Chick_hurt1");
         hp -= damage;
         if (hp <= 0)
         {
@@ -33,6 +34,7 @@ public class EnemyControl : MonoBehaviour
     }
     private void Die()
     {
+        AudioManager.Instance.PlaySFX("Chicken_death1");
         ani.SetBool("IsDead",true);
         Destroy(gameObject,0.5f);
     }

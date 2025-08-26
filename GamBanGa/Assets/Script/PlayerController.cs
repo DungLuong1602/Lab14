@@ -5,7 +5,6 @@ public class PlayerController : MonoBehaviour
     public float speed = 5.0f;
     public Transform firepoint;
     public int Hp = 3;
-
     private Rigidbody2D rb;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,6 +18,7 @@ public class PlayerController : MonoBehaviour
         Move();
         if(Input.GetMouseButtonDown(0))
         {
+            AudioManager.Instance.PlaySFX("a");
             Shooting();
         }
     }
@@ -52,6 +52,7 @@ public class PlayerController : MonoBehaviour
     private void Die()
     {
         // Add death effects or animations here if needed
+        AudioManager.Instance.PlaySFX("dead");
         Destroy(gameObject);
     }
 

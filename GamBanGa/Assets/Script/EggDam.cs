@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EggDam : MonoBehaviour
@@ -34,12 +36,20 @@ public class EggDam : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            AudioManager.Instance.PlaySFX("Egg_break");
             animator.SetBool("Explosion", true);
             collision.GetComponent<PlayerController>().TakeDam(1);
             //IsActive = false;
             //gameObject.SetActive(false);
             //Destroy(gameObject,0.3f);
-            EggPooling.Instance.ReturnEgg(gameObject);
+            StartCoroutine(DisableAfterAnimation());
         }
+    }
+
+    private IEnumerator DisableAfterAnimation()
+    {
+        yield return new WaitForSeconds(0.5f);
+        animator.SetBool("Explosion", false);
+        EggPooling.Instance.ReturnEgg(gameObject);
     }
 }
