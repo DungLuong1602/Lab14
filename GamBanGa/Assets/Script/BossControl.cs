@@ -51,7 +51,7 @@ public class BossControl : MonoBehaviour
     }
     public void SetRandomTimeInterval()
     {
-        dropInterval = Random.Range(3, 7f);
+        dropInterval = Random.Range(3, 5f);
         dropTimer = dropInterval;
     }
 }

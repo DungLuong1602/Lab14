@@ -39,7 +39,7 @@ public class WavwManagement : MonoBehaviour
                 Vector3 spawnPos = targetPos + new Vector3(0,6f,0) ;
 
                 GameObject enemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
-                enemy.GetComponent<EnemyControl>().hp = 1;
+                enemy.GetComponent<EnemyControl>().hp = 15;
                 //gameObject.tag = "enemy";
 
                 var move = enemy.AddComponent<EnemyMovingToTarget>();
@@ -60,7 +60,7 @@ public class WavwManagement : MonoBehaviour
             Vector3 spawnPos = targetPos + new Vector3(0, 6, 0);
 
             GameObject enemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
-            enemy.GetComponent<EnemyControl>().hp = 2;
+            enemy.GetComponent<EnemyControl>().hp = 25;
             //gameObject.tag = "enemy";
 
             var move = enemy.AddComponent<EnemyMovingToTarget>();
@@ -95,7 +95,7 @@ public class WavwManagement : MonoBehaviour
         {
             Vector3 spawnPos = new Vector3((i *RowSpacing % 10) - 5, 6 + (i*ColSpacing), 0);
             GameObject enemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
-            enemy.GetComponent<EnemyControl>().hp = 2;
+            enemy.GetComponent<EnemyControl>().hp = 15;
             //enemy.tag = "enemy";
 
             enemy.AddComponent<EnemyZigzag>();
@@ -107,7 +107,7 @@ public class WavwManagement : MonoBehaviour
         Vector3 targetPoint = new Vector3(0, 1.5f, 0);
         Vector3 SpawnPoint =  new Vector3(0, 10, 0);
         GameObject enemy = Instantiate(BossPrefab, SpawnPoint, Quaternion.identity);
-        enemy.GetComponent<BossControl>().hp = 20;
+        enemy.GetComponent<BossControl>().hp = 150;
 
         var move = enemy.AddComponent<EnemyMovingToTarget>();
         move.targetPosition = targetPoint;

@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -8,11 +10,16 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private string currentBulletTag = "Bulletlevel1";
     private int level = 1;
-    private int Currentpoint = 0;  
+    private int Currentpoint = 0;
+    public float blinkInterval = 0.2f;
+
+    private SpriteRenderer spriteRenderer;  
+    private bool isBlinking = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -23,6 +30,10 @@ public class PlayerController : MonoBehaviour
         {
             AudioManager.Instance.PlaySFX("a");
             Shooting();
+        }
+        if(Hp == 1 && !isBlinking)
+        {
+            StartCoroutine(Blink());
         }
     }
 
@@ -105,5 +116,17 @@ public class PlayerController : MonoBehaviour
                 }
             }
         
+    }
+
+    IEnumerator Blink()
+    {
+        isBlinking = true;
+        while(Hp == 1)
+        {
+            spriteRenderer.enabled = !spriteRenderer.enabled;
+            yield return new WaitForSeconds(blinkInterval);
+        }
+        spriteRenderer.enabled = true;
+        isBlinking = false;
     }
 }
