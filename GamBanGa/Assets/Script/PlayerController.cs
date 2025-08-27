@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -68,6 +69,7 @@ public class PlayerController : MonoBehaviour
         // Add death effects or animations here if needed
         AudioManager.Instance.PlaySFX("dead");
         Destroy(gameObject);
+        MenuController.Instance.GameOver();
     }
 
     public void AddLevel()
@@ -87,6 +89,7 @@ public class PlayerController : MonoBehaviour
     {
         Currentpoint += point;
         Debug.Log("Point: " + Currentpoint);
+        MenuController.Instance.AddScore(point);
     }
     public void UpgradeWeapon(string Tag)
     {

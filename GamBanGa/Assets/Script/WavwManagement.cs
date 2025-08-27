@@ -27,6 +27,7 @@ public class WavwManagement : MonoBehaviour
         SpawnWave4();
         yield return new WaitUntil(() => GameObject.FindGameObjectsWithTag("enemy").Length == 0);
         // Tất cả các đợt đã hoàn thành
+        AudioManager.Instance.PlaySFX("Gamewin");
         Debug.Log("All waves completed!");
     }
     void SpawnWave1()
