@@ -5,6 +5,7 @@ using UnityEngine;
 public class WavwManagement : MonoBehaviour 
 {
     public GameObject enemyPrefab; // Prefab của kẻ thù
+    public GameObject BossPrefab;
     public int rows = 3; // Số hàng
     public int cols = 5; // Số cột
     public int count = 7;
@@ -22,8 +23,9 @@ public class WavwManagement : MonoBehaviour
         SpawnWave2();
         yield return new WaitUntil(() => GameObject.FindGameObjectsWithTag("enemy").Length == 0);
         SpawnWave3();
-        yield return new WaitUntil(() => GameObject.FindGameObjectsWithTag("enemy").Length == 0);
-
+        yield return new WaitForSeconds(30f);
+        //SpawnWave4();
+        //yield return new WaitUntil(() => GameObject.FindGameObjectsWithTag("enemy").Length == 0);
         // Tất cả các đợt đã hoàn thành
         Debug.Log("All waves completed!");
     }
@@ -78,9 +80,12 @@ public class WavwManagement : MonoBehaviour
 
     IEnumerator EnableCircleAfterReach(EnemyMovingToTarget mover, EnemyCircleMovement circle)
     {
-        yield return new WaitUntil(() => mover.ReachedTarget());
-        circle.enabled = true;
-        Destroy(mover);
+        yield return new WaitUntil(() => mover != null && mover.ReachedTarget());
+        if (circle != null)
+            circle.enabled = true;
+
+        if (mover != null)
+            Destroy(mover);
     }
 
 
@@ -97,5 +102,15 @@ public class WavwManagement : MonoBehaviour
         }
     }
 
+    //void SpawnWave4()
+    //{
+    //    Vector3 targetPoint = new Vector3(0, 1.5f, 0);
+    //    Vector3 SpawnPoint =  new Vector3(0, 10, 0);
+    //    GameObject enemy = Instantiate(BossPrefab, SpawnPoint, Quaternion.identity);
+    //    enemy.GetComponent<BossControl>().hp = 20;
 
+    //    var move = enemy.AddComponent<EnemyMovingToTarget>();
+    //    move.targetPosition = targetPoint;
+    //    move.speed = 1.5f;
+    //}
 }

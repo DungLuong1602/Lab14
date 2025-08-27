@@ -65,6 +65,7 @@
     <Compile Include="Assets\Script\EnemyZigzag.cs" />
     <Compile Include="Assets\Script\AudioManager.cs" />
     <Compile Include="Assets\Script\BackgroundScrolling.cs" />
+    <Compile Include="Assets\Script\BossControl.cs" />
     <Compile Include="Assets\Script\EnemyControl.cs" />
     <Compile Include="Assets\Script\EggPooling.cs" />
     <Compile Include="Assets\Script\ObjectPooling.cs" />
