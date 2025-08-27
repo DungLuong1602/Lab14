@@ -4,6 +4,7 @@ public class Bullet : MonoBehaviour
 {
     public float speed = 10.0f;
     public bool IsActive = false;
+    public int Damage = 1;
 
     // Update is called once per frame
     void Update()
@@ -30,7 +31,7 @@ public class Bullet : MonoBehaviour
     {
         if(collision.CompareTag("enemy") && IsActive)
         {
-            collision.GetComponent<EnemyControl>().TakeDamage(1);
+            collision.GetComponent<EnemyControl>().TakeDamage(Damage);
             IsActive = false;
             gameObject.SetActive(false);
         }

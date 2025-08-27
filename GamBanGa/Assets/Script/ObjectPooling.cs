@@ -3,39 +3,55 @@ using System.Collections.Generic;
 
 public class ObjectPooling : MonoBehaviour
 {
-    public GameObject objectPrefab;
-    public static ObjectPooling Instance;
-    public int poolSize = 20;
-
-
-    private List<GameObject> pool;
     
+    public static ObjectPooling Instance;
+
+    [System.Serializable]
+    public class Pool
+    {
+        public string tag;
+        public GameObject prefab;
+        public int size;
+    }
+
+
+    public List<Pool> pools;
+    private Dictionary<string, Queue<GameObject>> poolDictionary;
+
     void Awake()
     {
         Instance = this;
-        pool = new List<GameObject>();
-
-        for (int i = 0; i < poolSize; i++)
+    }
+    private void Start()
+    {
+        poolDictionary = new Dictionary<string, Queue<GameObject>>();
+        foreach(Pool pool in pools)
         {
-            GameObject obj = Instantiate(objectPrefab);
-            obj.SetActive(false);
-            pool.Add(obj);
+            Queue<GameObject> objectPool = new Queue<GameObject>();
+            for(int i=0; i<pool.size; i++)
+            {
+                GameObject obj = Instantiate(pool.prefab);
+                obj.SetActive(false);
+                objectPool.Enqueue(obj);
+            }
+
+            poolDictionary.Add(pool.tag, objectPool);
         }
     }
-
-    public GameObject GetBullet()
+    
+    public GameObject SpawnFromPool(string tag, Vector3 position, Quaternion rotation)
     {
-        foreach (var obj in pool)
+        if(!poolDictionary.ContainsKey(tag))
         {
-            if(!obj.activeInHierarchy)
-            {
-                return obj;
-            }
+            Debug.LogWarning("Pool with tag " + tag + " doesn't exist.");
+            return null;
         }
-        GameObject newObj = Instantiate(objectPrefab);
-        newObj.SetActive(false);
-        pool.Add(newObj);
-        return newObj;
+        GameObject objectToSpawn = poolDictionary[tag].Dequeue();
+        objectToSpawn.SetActive(true);
+        objectToSpawn.transform.position = position;
+        objectToSpawn.transform.rotation = rotation;
+        poolDictionary[tag].Enqueue(objectToSpawn);
+        return objectToSpawn;
     }
 
 }
