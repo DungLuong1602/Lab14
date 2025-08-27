@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private string currentBulletTag = "Bulletlevel1";
     private int level = 1;
+    private int Currentpoint = 0;  
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -70,6 +71,12 @@ public class PlayerController : MonoBehaviour
             UpgradeWeapon("Bulletlevel3");
         }
     }
+
+    public void GetPoint(int point)
+    {
+        Currentpoint += point;
+        Debug.Log("Point: " + Currentpoint);
+    }
     public void UpgradeWeapon(string Tag)
     {
         currentBulletTag = Tag;
@@ -87,16 +94,16 @@ public class PlayerController : MonoBehaviour
                 enemy.TakeDamage(1);
             }
         }
-        //    if(collision.gameObject.CompareTag("Boss"))
-        //    {
-        //        //AudioManager.Instance.PlaySFX("Player_hurt");
-        //        TakeDam(1);
-        //        BossControl boss = collision.gameObject.GetComponent<BossControl>();
-        //        if (boss != null)
-        //        {
-        //            boss.TakeDamage(1);
-        //        }
-        //    }
+            if(collision.gameObject.CompareTag("Boss"))
+            {
+                AudioManager.Instance.PlaySFX("Player_hurt");
+                TakeDam(1);
+                BossControl boss = collision.gameObject.GetComponent<BossControl>();
+                if (boss != null)
+                {
+                   boss.BossTakeDamage(1);
+                }
+            }
         
     }
 }

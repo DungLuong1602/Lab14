@@ -32,14 +32,13 @@ public class Bullet : MonoBehaviour
         if(collision.CompareTag("enemy") && IsActive)
         {
             collision.GetComponent<EnemyControl>().TakeDamage(Damage);
-            IsActive = false;
-            gameObject.SetActive(false);
         }
-        //else if(collision.CompareTag("Boss") && IsActive)
-        //{ 
-        //    collision.GetComponent<BossControl>().TakeDamage(Damage);
-        //}
-        
+        if(collision.CompareTag("Boss") && IsActive)
+        { 
+            collision.GetComponent<BossControl>().BossTakeDamage(Damage);
+        }
+        IsActive = false;
+        gameObject.SetActive(false);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

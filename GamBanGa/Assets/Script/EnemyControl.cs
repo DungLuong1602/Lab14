@@ -7,9 +7,11 @@ public class EnemyControl : MonoBehaviour
     public float dropInterval = 2.0f;
     private float dropTimer;
     public Transform Firepoint;
-    private void Start()
+    private Rigidbody2D rb;
+    private void Start()    
     {
         ani = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
         SetRandomTimeInterval();
     }
 
@@ -35,7 +37,9 @@ public class EnemyControl : MonoBehaviour
     private void Die()
     {
         AudioManager.Instance.PlaySFX("Chicken_death1");
-        ani.SetBool("IsDead",true);
+        Vector2 currentVel = rb != null ? rb.linearVelocity : Vector2.zero;
+        ChickenPooling.Instance.SpawnChicken(transform.position,currentVel);
+        ani.SetBool("IsDead", true);
         Destroy(gameObject,0.5f);
     }
 

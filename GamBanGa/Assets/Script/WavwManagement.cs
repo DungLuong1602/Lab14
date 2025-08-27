@@ -24,8 +24,8 @@ public class WavwManagement : MonoBehaviour
         yield return new WaitUntil(() => GameObject.FindGameObjectsWithTag("enemy").Length == 0);
         SpawnWave3();
         yield return new WaitForSeconds(30f);
-        //SpawnWave4();
-        //yield return new WaitUntil(() => GameObject.FindGameObjectsWithTag("enemy").Length == 0);
+        SpawnWave4();
+        yield return new WaitUntil(() => GameObject.FindGameObjectsWithTag("enemy").Length == 0);
         // Tất cả các đợt đã hoàn thành
         Debug.Log("All waves completed!");
     }
@@ -102,15 +102,15 @@ public class WavwManagement : MonoBehaviour
         }
     }
 
-    //void SpawnWave4()
-    //{
-    //    Vector3 targetPoint = new Vector3(0, 1.5f, 0);
-    //    Vector3 SpawnPoint =  new Vector3(0, 10, 0);
-    //    GameObject enemy = Instantiate(BossPrefab, SpawnPoint, Quaternion.identity);
-    //    enemy.GetComponent<BossControl>().hp = 20;
+    void SpawnWave4()
+    {
+        Vector3 targetPoint = new Vector3(0, 1.5f, 0);
+        Vector3 SpawnPoint =  new Vector3(0, 10, 0);
+        GameObject enemy = Instantiate(BossPrefab, SpawnPoint, Quaternion.identity);
+        enemy.GetComponent<BossControl>().hp = 20;
 
-    //    var move = enemy.AddComponent<EnemyMovingToTarget>();
-    //    move.targetPosition = targetPoint;
-    //    move.speed = 1.5f;
-    //}
+        var move = enemy.AddComponent<EnemyMovingToTarget>();
+        move.targetPosition = targetPoint;
+        move.speed = 1.5f;
+    }
 }

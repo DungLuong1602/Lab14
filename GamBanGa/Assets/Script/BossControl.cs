@@ -7,9 +7,11 @@ public class BossControl : MonoBehaviour
     public float dropInterval = 2.0f;
     private float dropTimer;
     public Transform[] Firepoint;
+    private Rigidbody2D rb;
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         ani = GetComponent<Animator>();
         SetRandomTimeInterval();
     }
@@ -19,29 +21,31 @@ public class BossControl : MonoBehaviour
 
         if (dropTimer <= 0f)
         {
-            Dropping();
+            BossDropping();
             SetRandomTimeInterval();
         }
     }
-    public void TakeDamage(int damage)
+    public void BossTakeDamage(int damage)
     {
         AudioManager.Instance.PlaySFX("Chick_hurt1");
         hp -= damage;
         if (hp <= 0)
         {
-            Die();
+            BossDie();
         }
     }
-    private void Dropping()
+    private void BossDropping()
     {
         GameObject egg = EggPooling.Instance.GetEgg();
         int randomIndex = Random.Range(0, Firepoint.Length);
         Transform firepoint = this.Firepoint[randomIndex];
         egg.GetComponent<EggDam>().Drop(firepoint.position);
     }
-    private void Die()
+    private void BossDie()
     {
         AudioManager.Instance.PlaySFX("Chicken_death1");
+        Vector2 currentVel = rb != null ? rb.linearVelocity : Vector2.zero;
+        ChickenPooling.Instance.SpawnChicken(transform.position, currentVel);
         ani.SetBool("IsDead", true);
         Destroy(gameObject, 0.5f);
     }

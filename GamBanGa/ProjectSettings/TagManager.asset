@@ -11,6 +11,7 @@ TagManager:
   - Bulletlevel2
   - Bulletlevel3
   - Boss
+  - ChickenLeg
   layers:
   - Default
   - TransparentFX

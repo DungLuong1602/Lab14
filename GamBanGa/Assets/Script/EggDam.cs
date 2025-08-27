@@ -45,7 +45,15 @@ public class EggDam : MonoBehaviour
             StartCoroutine(DisableAfterAnimation());
         }
     }
-
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("boundary"))
+        {
+            AudioManager.Instance.PlaySFX("Egg_break");
+            animator.SetBool("Explosion", true);
+            StartCoroutine(DisableAfterAnimation());
+        }
+    }
     private IEnumerator DisableAfterAnimation()
     {
         yield return new WaitForSeconds(0.5f);
