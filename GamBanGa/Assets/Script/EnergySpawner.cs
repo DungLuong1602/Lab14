@@ -38,7 +38,7 @@ public class EnergySpawner : MonoBehaviour
     }
     private void SetRandomTimeInterval()
     {
-               spawnInterval = Random.Range(10f, 15f); 
+               spawnInterval = Random.Range(30f, 60f); 
                 Timer = spawnInterval; 
     }
 }

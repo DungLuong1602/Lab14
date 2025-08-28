@@ -40,7 +40,7 @@ public class EnemyControl : MonoBehaviour
         Vector2 currentVel = rb != null ? rb.linearVelocity : Vector2.zero;
         ChickenPooling.Instance.SpawnChicken(transform.position,currentVel);
         ani.SetBool("IsDead", true);
-        Destroy(gameObject,0.5f);
+        Destroy(gameObject,0.3f);
     }
 
     private void Dropping()
@@ -51,7 +51,7 @@ public class EnemyControl : MonoBehaviour
 
     public void SetRandomTimeInterval()
     {
-        dropInterval = Random.Range(7f, 15f);
+        dropInterval = Random.Range(4f, 9f);
         dropTimer = dropInterval;
     }
 }

@@ -44,15 +44,23 @@ public class EggDam : MonoBehaviour
             //Destroy(gameObject,0.3f);
             StartCoroutine(DisableAfterAnimation());
         }
-    }
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("boundary"))
+        else if(collision.CompareTag("boundary"))
         {
-            AudioManager.Instance.PlaySFX("Egg_break");
-            animator.SetBool("Explosion", true);
-            StartCoroutine(DisableAfterAnimation());
+            BreakEgg();
         }
+    }
+    //public void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("boundary"))
+    //    {
+    //        BreakEgg();
+    //    }
+    //}
+    public void BreakEgg()
+    {
+        AudioManager.Instance.PlaySFX("Egg_break");
+        animator.SetBool("Explosion", true);
+        StartCoroutine(DisableAfterAnimation());
     }
     private IEnumerator DisableAfterAnimation()
     {

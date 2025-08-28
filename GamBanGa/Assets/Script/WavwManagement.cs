@@ -18,7 +18,7 @@ public class WavwManagement : MonoBehaviour
     }
     IEnumerator SpawnWaves()
     {
-        SpawnWave1();
+        StartCoroutine(SpawnWave1());
         yield return new WaitUntil(() => GameObject.FindGameObjectsWithTag("enemy").Length == 0);
         SpawnWave2();
         yield return new WaitUntil(() => GameObject.FindGameObjectsWithTag("enemy").Length == 0);
@@ -30,7 +30,7 @@ public class WavwManagement : MonoBehaviour
         AudioManager.Instance.PlaySFX("Gamewin");
         Debug.Log("All waves completed!");
     }
-    void SpawnWave1()
+    IEnumerator  SpawnWave1()
     {
         for (int i = 0; i < rows ; i++)
         {
@@ -46,6 +46,7 @@ public class WavwManagement : MonoBehaviour
                 var move = enemy.AddComponent<EnemyMovingToTarget>();
                 move.targetPosition = targetPos;
                 move.speed = 2f;
+                yield return new WaitForSeconds(0.2f);
             }
         }
     }
@@ -67,6 +68,7 @@ public class WavwManagement : MonoBehaviour
             var move = enemy.AddComponent<EnemyMovingToTarget>();
             move.targetPosition = targetPos;
             move.speed = 2f;
+            
 
             EnemyCircleMovement circleMove = enemy.AddComponent<EnemyCircleMovement>();
             circleMove.Center = center;
@@ -98,7 +100,6 @@ public class WavwManagement : MonoBehaviour
             GameObject enemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
             enemy.GetComponent<EnemyControl>().hp = 15;
             //enemy.tag = "enemy";
-
             enemy.AddComponent<EnemyZigzag>();
         }
     }
